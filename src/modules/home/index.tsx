@@ -1,6 +1,6 @@
 import { theme } from '@/theme';
-import Header from '@components/v2/header';
-import SideNav from '@components/v2/side-nav';
+import Header from '@components/header';
+import SideNav from '@components/side-nav';
 import { ThemeProvider } from '@kami-ui/next-theme';
 import BlackSection from '@modules/home/black-section';
 import Grainy from '@modules/home/grainy';

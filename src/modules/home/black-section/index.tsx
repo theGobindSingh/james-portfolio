@@ -1,4 +1,4 @@
-import CommonFullWidthWrapper from '@components/v2/common-full-width-wrapper';
+import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import { forwardRef } from 'react';
 
 const BlackSectionWithoutRef = () => {

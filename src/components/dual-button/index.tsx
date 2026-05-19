@@ -3,7 +3,7 @@ import {
   SecondBg,
   Text,
   TextContainer,
-} from '@components/v2/dual-button/style';
+} from '@components/dual-button/style';
 
 interface DualButtonProps {
   text: string;

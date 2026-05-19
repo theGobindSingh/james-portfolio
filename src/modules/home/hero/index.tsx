@@ -1,5 +1,5 @@
-import CommonFullWidthWrapper from '@components/v2/common-full-width-wrapper';
-import DualButton from '@components/v2/dual-button';
+import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
+import DualButton from '@components/dual-button';
 import { homeHeroData } from '@data';
 import HeroArrow from '@icons/v2/hero-arrow';
 import {

@@ -1,4 +1,4 @@
-import { linkTextWrapperStyles } from '@components/v2/link-text/styles';
+import { linkTextWrapperStyles } from '@components/link-text/styles';
 import Link, { type LinkProps } from 'next/link';
 import { ButtonHTMLAttributes } from 'react';
 

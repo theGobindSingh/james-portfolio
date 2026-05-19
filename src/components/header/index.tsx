@@ -1,12 +1,12 @@
-import CommonFullWidthWrapper from '@components/v2/common-full-width-wrapper';
+import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import {
   DesignationText,
   headerContainerStyles,
   LogoAndDesignation,
   logoLinkStyles,
   NavWrapper,
-} from '@components/v2/header/styles';
-import LinkText from '@components/v2/link-text';
+} from '@components/header/styles';
+import LinkText from '@components/link-text';
 import { headerAndNavData } from '@data';
 import Link from 'next/link';
 import { forwardRef, Ref } from 'react';
