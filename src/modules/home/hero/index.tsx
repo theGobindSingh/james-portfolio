@@ -10,7 +10,7 @@ import {
   HomeHeroTextWrapper,
   HomeHeroTitle,
   homeHeroWrapperStyles,
-} from '@modules/v2/home/hero/styles';
+} from '@modules/home/hero/styles';
 import { useLenis } from 'lenis/react';
 import Image from 'next/image';
 import { forwardRef, Ref, RefObject, useRef } from 'react';

@@ -1,4 +1,4 @@
-import { Home } from '@modules/v2';
+import Home from '@modules/home';
 
 const HomePage = () => {
   return <Home />;

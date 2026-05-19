@@ -1,4 +1,4 @@
-import { GrainySvg } from '@modules/v2/home/styles';
+import { GrainySvg } from '@modules/home/styles';
 import { SVGProps } from 'react';
 
 const Grainy = (props: SVGProps<SVGSVGElement>) => {

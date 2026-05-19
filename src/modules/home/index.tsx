@@ -1,10 +1,10 @@
+import { theme } from '@/theme';
 import Header from '@components/v2/header';
 import SideNav from '@components/v2/side-nav';
 import { ThemeProvider } from '@kami-ui/next-theme';
-import BlackSection from '@modules/v2/home/black-section';
-import Grainy from '@modules/v2/home/grainy';
-import HomeHero from '@modules/v2/home/hero';
-import { theme } from '@modules/v2/theme';
+import BlackSection from '@modules/home/black-section';
+import Grainy from '@modules/home/grainy';
+import HomeHero from '@modules/home/hero';
 import { ReactLenis } from 'lenis/react';
 import { PropsWithChildren, useEffect, useRef } from 'react';
 
@@ -22,13 +22,13 @@ const HomeWrapperWithComponents = ({
 };
 
 const Home = () => {
-  const screenHeightForScroll = useRef<number>(900);
+  const screenHeightForScrollRef = useRef<number>(900);
   const sideNavRef = useRef<HTMLDivElement>(null);
   const homeHeroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const { innerHeight } = window;
-    screenHeightForScroll.current = 0.8 * innerHeight;
+    screenHeightForScrollRef.current = 0.8 * innerHeight;
   }, []);
 
   return (
