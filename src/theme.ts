@@ -1,7 +1,12 @@
 /* eslint-disable -- needed */
 import type { ThemeObject } from '@kami-ui/types';
 import { breakpoints } from '@styles/global';
-import { DM_Mono, DM_Sans, DM_Serif_Display } from 'next/font/google';
+import {
+  Bebas_Neue,
+  DM_Mono,
+  DM_Sans,
+  DM_Serif_Display,
+} from 'next/font/google';
 
 const fontSansSerif = DM_Serif_Display({
   weight: ['400'],
@@ -16,6 +21,12 @@ const fontMono = DM_Mono({
 const fontSans = DM_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin', 'latin-ext'],
+});
+
+const specialFontOne = Bebas_Neue({
+  weight: ['400'],
+  subsets: ['latin', 'latin-ext'],
+  preload: true,
 });
 
 export const theme: ThemeObject = {
@@ -79,6 +90,7 @@ export const theme: ThemeObject = {
       serif: fontSansSerif.style.fontFamily,
       sans: fontSans.style.fontFamily,
       mono: fontMono.style.fontFamily,
+      ['special-one']: specialFontOne.style.fontFamily,
     },
   },
 };
