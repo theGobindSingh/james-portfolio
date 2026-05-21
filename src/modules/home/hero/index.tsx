@@ -5,12 +5,16 @@ import HeroArrow from '@icons/v2/hero-arrow';
 import {
   homeHeroArrowStyles,
   homeHeroContainerStyles,
+  HomeHeroContentWrapper,
   HomeHeroDateTextWrapper,
   homeHeroImgStyles,
+  HomeHeroLineBox,
   HomeHeroTextWrapper,
   HomeHeroTitle,
   homeHeroWrapperStyles,
+  HomeImageContainer,
 } from '@modules/home/hero/styles';
+import { ChevronLeftRounded } from '@mui/icons-material';
 import { useLenis } from 'lenis/react';
 import Image from 'next/image';
 import { forwardRef, Ref, RefObject, useRef } from 'react';
@@ -44,16 +48,28 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
       ref={ref ?? fallbackRef}
     >
       <HomeHeroTitle>{title}</HomeHeroTitle>
-      <HomeHeroTextWrapper>
-        <p className="text">{text}</p>
-        <DualButton text={buttonText} onClick={clickHandler} />
-      </HomeHeroTextWrapper>
-      <HeroArrow css={homeHeroArrowStyles} />
+      <HomeImageContainer>
+        <Image src={img} alt="" css={homeHeroImgStyles} priority />
+      </HomeImageContainer>
+      <HomeHeroContentWrapper>
+        <HeroArrow css={homeHeroArrowStyles} />
+        <HomeHeroTextWrapper>
+          <p className="text">{text}</p>
+          <DualButton text={buttonText} onClick={clickHandler} />
+        </HomeHeroTextWrapper>
+      </HomeHeroContentWrapper>
       <HomeHeroDateTextWrapper>
         <span className="text">{dateText}</span>
         <span className="date">{date}</span>
       </HomeHeroDateTextWrapper>
-      <Image src={img} alt="" css={homeHeroImgStyles} priority />
+      <HomeHeroLineBox>
+        <div className="box _1">
+          <ChevronLeftRounded className="icon" />
+        </div>
+        <div className="box _2">
+          <ChevronLeftRounded className="icon" />
+        </div>
+      </HomeHeroLineBox>
     </CommonFullWidthWrapper>
   );
 };

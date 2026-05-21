@@ -1,4 +1,4 @@
-import myPhoto from '@images/me2.jpg';
+import pencilPhoto from '@images/pencil_drawing.png';
 
 export const firstName = 'James';
 export const lastName = 'Loder';
@@ -65,7 +65,7 @@ export const headerAndNavData: {
 export const homeHeroData = {
   title: `${fullName}.`,
   text: about,
-  img: myPhoto,
+  img: pencilPhoto,
   dateText: 'Building exceptional digital experiences since',
   date: '2021',
   buttonText: 'Contact ↗',

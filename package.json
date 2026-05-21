@@ -16,6 +16,8 @@
     "@kami-ui/next-theme": "^0.0.22",
     "@kami-ui/react-components": "^0.0.3",
     "@kami-ui/types": "^0.0.3",
+    "@mui/icons-material": "^9.0.1",
+    "@mui/material": "^9.0.1",
     "@types/node": "^25.9.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
