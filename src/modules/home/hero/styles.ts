@@ -90,6 +90,7 @@ export const HomeHeroContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-right: 10%;
 `;
 
 export const HomeHeroLineBox = styled.div`
@@ -137,8 +138,6 @@ export const HomeHeroTextWrapper = styled.div`
   margin: 0;
   grid-row: 3 / 4;
   font-size: var(--fs-m);
-  width: 95%;
-  max-width: 25ch;
   color: var(--color-text-600);
   font-weight: 500;
   & > .text {

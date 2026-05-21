@@ -36,7 +36,7 @@ const HeaderWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
         <Link href="/" css={logoLinkStyles}>
           {logoText}
         </Link>
-        <DesignationText>{`( ${middleText} )`}</DesignationText>
+        <DesignationText>{`${middleText}`}</DesignationText>
       </LogoAndDesignation>
       <NavWrapper>
         <ul className="list-container">{links.map(primaryLinksMapper)}</ul>

@@ -4,9 +4,9 @@ export const firstName = 'James';
 export const lastName = 'Loder';
 export const fullName = `${firstName} ${lastName}`;
 
-export const about = `I help growing brands and startups gain an unfair advantage through premium, results driven websites.`;
+export const about = `I lead at the intersection of brand strategy, art direction, and corporate identity—unifying visual systems to protect enterprise equity and drive long-term commercial value.`;
 
-export const designation = 'Creative director';
+export const designation = 'Art Director | Brand Manager | Creative Strategist';
 
 export const email = 'android.gobind@gmail.com';
 
@@ -67,7 +67,7 @@ export const homeHeroData = {
   text: about,
   img: pencilPhoto,
   dateText: 'Building exceptional digital experiences since',
-  date: '2021',
+  date: '2015',
   buttonText: 'Contact ↗',
   buttonTargetClassName: 'contact',
 };
