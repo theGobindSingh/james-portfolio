@@ -45,16 +45,25 @@ export const HomeImageContainer = styled.div`
   position: relative;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  border-top: var(--_pencil-line-width) solid var(--color-text-300);
   transform: translateX(calc(var(--_pencil-line-width) / 2));
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 21%;
+    height: 100%;
+    border-top: var(--_pencil-line-width) solid var(--color-text-300);
+  }
 `;
 
 export const homeHeroImgStyles = css`
   height: 100%;
   width: 100%;
   object-fit: contain;
-  transform: translate(-15%, calc(-50% - 1px));
-  filter: grayscale(100%);
+  transform: translate(-20%, calc(-50% + var(--_pencil-line-width) / 2));
+  /* filter: grayscale(100%); */
+  /* mix-blend-mode: darken; */
 `;
 
 export const HomeHeroTitle = styled.h1`
@@ -103,7 +112,7 @@ export const HomeHeroLineBox = styled.div`
     position: absolute;
     width: 100%;
     border: var(--_pencil-line-width) solid var(--color-text-300);
-    border-top-right-radius: 0.5rem;
+    border-top-right-radius: 0.25rem;
     border-left-color: transparent;
     top: 0;
     left: 0;

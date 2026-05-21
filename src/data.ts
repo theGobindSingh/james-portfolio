@@ -1,4 +1,4 @@
-import pencilPhoto from '@images/pencil_drawing.png';
+import pencilPhoto from '@images/pencil_drawing_wr.png';
 
 export const firstName = 'James';
 export const lastName = 'Loder';
