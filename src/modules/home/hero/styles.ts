@@ -226,6 +226,7 @@ export const HomeHeroDateTextWrapper = styled.div`
   grid-row: 4 / 5;
   height: 100%;
   width: 100%;
+  padding-left: var(--fs-m);
   .text {
     font-family: var(--font-mono);
     font-size: var(--fs-2xs);
@@ -243,6 +244,7 @@ export const HomeHeroDateTextWrapper = styled.div`
     grid-column: 3 / -1;
     height: 100%;
     width: 100%;
+    padding-left: 10%;
     .text {
       font-size: var(--fs-4xs);
       margin-bottom: 0.5em;
