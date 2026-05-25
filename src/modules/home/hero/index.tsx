@@ -19,8 +19,16 @@ import { useLenis } from 'lenis/react';
 import Image from 'next/image';
 import { forwardRef, Ref, RefObject, useRef } from 'react';
 
-const { img, text, title, date, dateText, buttonText, buttonTargetClassName } =
-  homeHeroData;
+const {
+  img,
+  imgMobile,
+  text,
+  title,
+  date,
+  dateText,
+  buttonText,
+  buttonTargetClassName,
+} = homeHeroData;
 
 const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
   const fallbackRef = useRef<HTMLDivElement>(null);
@@ -49,7 +57,20 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
     >
       <HomeHeroTitle>{title}</HomeHeroTitle>
       <HomeImageContainer>
-        <Image src={img} alt="" css={homeHeroImgStyles} priority />
+        <Image
+          src={img}
+          alt=""
+          css={homeHeroImgStyles}
+          priority
+          className="desktop"
+        />
+        <Image
+          src={imgMobile}
+          alt=""
+          css={homeHeroImgStyles}
+          priority
+          className="mobile"
+        />
       </HomeImageContainer>
       <HomeHeroContentWrapper>
         <HeroArrow css={homeHeroArrowStyles} />

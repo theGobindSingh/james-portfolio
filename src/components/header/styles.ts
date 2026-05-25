@@ -7,6 +7,7 @@ export const headerContainerStyles = css`
   position: relative;
   align-items: center;
   height: var(--header-height);
+  overflow: hidden;
   padding: 0.75rem 0;
   ${mediaQuery.nonDesktop} {
     align-items: flex-start;
@@ -53,6 +54,7 @@ export const NavWrapper = styled.nav`
     ${mediaQuery.nonDesktop} {
       flex-direction: column;
       margin: 0;
+      gap: 0em;
       .list-elem {
         font-size: var(--fs-2xs);
       }

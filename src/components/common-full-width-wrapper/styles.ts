@@ -6,6 +6,8 @@ export const mobileContainerSize = '90%';
 
 export const wrapperStyles = css`
   width: ${mobileContainerSize};
+  max-width: 100vw;
+  overflow-x: hidden;
   ${mediaQuery.desktop} {
     width: ${containerSize};
   }

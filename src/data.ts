@@ -1,4 +1,5 @@
 import pencilPhoto from '@images/pencil_drawing_wr.png';
+import pencilPhotoVertical from '@images/pencil_drawing_wr_vertical.png';
 
 export const firstName = 'James';
 export const lastName = 'Loder';
@@ -66,6 +67,7 @@ export const homeHeroData = {
   title: `${fullName}.`,
   text: about,
   img: pencilPhoto,
+  imgMobile: pencilPhotoVertical,
   dateText: 'Building exceptional digital experiences since',
   date: '2015',
   buttonText: 'Contact ↗',

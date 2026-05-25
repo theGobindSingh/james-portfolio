@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { mediaQuery } from '@styles/global';
 
 export const DualButtonWrapper = styled.button`
   position: relative;
@@ -24,6 +25,10 @@ export const DualButtonWrapper = styled.button`
       transform: translateY(0) scale(1);
       border-radius: inherit;
     }
+  }
+
+  ${mediaQuery.nonDesktop} {
+    font-size: var(--fs-2xs);
   }
 `;
 

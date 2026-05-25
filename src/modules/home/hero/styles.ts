@@ -13,29 +13,23 @@ export const homeHeroWrapperStyles = css`
 export const homeHeroContainerStyles = css`
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto 10rem;
+  padding: 0 !important;
+  padding-bottom: 0;
+  /* padding-bottom: 3rem; */
+  margin-bottom: 0;
+  grid-template-columns: 1fr 0.6fr 0.4fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+
   margin-bottom: 1rem;
 
   --_pencil-line-width: 3px;
 
   ${mediaQuery.nonDesktop} {
     row-gap: 1rem;
-  }
+    grid-template-columns: 0.15fr 0.6fr 0.25fr;
+    grid-template-rows: 0.75fr 1.25fr;
 
-  ${mediaQuery.tablet} {
-    grid-template-rows: auto auto 20rem;
-    padding: 25vw 1rem 1rem 1rem;
-  }
-
-  ${mediaQuery.desktop} {
-    height: 100%;
-    padding: 0;
-    padding-bottom: 0;
-    /* padding-bottom: 3rem; */
-    margin-bottom: 0;
-    grid-template-columns: 1fr 0.6fr 0.4fr;
-    grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+    --_pencil-line-width: 2px;
   }
 `;
 
@@ -55,6 +49,25 @@ export const HomeImageContainer = styled.div`
     height: 100%;
     border-top: var(--_pencil-line-width) solid var(--color-text-300);
   }
+
+  ${mediaQuery.nonDesktop} {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    width: auto;
+    transform: translateX(0);
+    &::before {
+      border-top: 0px solid transparent;
+      border-right: var(--_pencil-line-width) solid var(--color-text-300);
+      border-bottom: var(--_pencil-line-width) solid var(--color-text-300);
+      border-bottom-right-radius: 1rem;
+      top: 50vh;
+      height: 30px;
+      width: calc(
+        (100% + 5vw / 2) + (5vw / 2) - (var(--_pencil-line-width) * 1.5)
+      );
+      transform: translateX(calc(-50% + 5vw / 2));
+    }
+  }
 `;
 
 export const homeHeroImgStyles = css`
@@ -64,6 +77,21 @@ export const homeHeroImgStyles = css`
   transform: translate(-20%, calc(-50% + var(--_pencil-line-width) / 2));
   /* filter: grayscale(100%); */
   /* mix-blend-mode: darken; */
+  ${mediaQuery.desktop} {
+    &.mobile {
+      display: none;
+    }
+  }
+
+  ${mediaQuery.nonDesktop} {
+    &.desktop {
+      display: none;
+    }
+    object-position: center bottom;
+    transform: translate(0, 0);
+    height: 50vh;
+    width: 100%;
+  }
 `;
 
 export const HomeHeroTitle = styled.h1`
@@ -89,6 +117,8 @@ export const HomeHeroTitle = styled.h1`
     line-height: 0.8em;
     max-width: 7ch;
     align-self: flex-end;
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
     /* margin-bottom: 0.25em; */
   }
 `;
@@ -100,6 +130,13 @@ export const HomeHeroContentWrapper = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   padding-right: 10%;
+  position: relative;
+  ${mediaQuery.nonDesktop} {
+    grid-column: 2 / 3;
+    grid-row: 2 / -1;
+    padding-right: 0;
+    gap: 0.75rem;
+  }
 `;
 
 export const HomeHeroLineBox = styled.div`
@@ -141,6 +178,11 @@ export const HomeHeroLineBox = styled.div`
       font-size: 2rem;
     }
   }
+  ${mediaQuery.nonDesktop} {
+    display: none;
+    grid-column: unset;
+    grid-row: unset;
+  }
 `;
 
 export const HomeHeroTextWrapper = styled.div`
@@ -155,12 +197,10 @@ export const HomeHeroTextWrapper = styled.div`
   }
   .button {
   }
-  ${mediaQuery.phone} {
+  ${mediaQuery.nonDesktop} {
     & > .text {
       font-size: var(--fs-1xs);
     }
-  }
-  ${mediaQuery.nonDesktop} {
     grid-row: 2 / 3;
     grid-column: 1 / -1;
   }
@@ -172,7 +212,7 @@ export const homeHeroArrowStyles = css`
   grid-row: 2 / 3; */
   color: var(--color-text-500);
   ${mediaQuery.nonDesktop} {
-    display: none;
+    font-size: var(--fs-1xs);
   }
 `;
 
@@ -198,19 +238,18 @@ export const HomeHeroDateTextWrapper = styled.div`
     font-size: var(--fs-4xl);
     font-weight: 600;
   }
-  ${mediaQuery.phone} {
-    .text {
-      font-size: var(--fs-3xs);
-    }
-  }
   ${mediaQuery.nonDesktop} {
-    grid-row: 3 / 4;
-    grid-column: 2 / 4;
+    grid-row: 2 / -1;
+    grid-column: 3 / -1;
+    height: 100%;
+    width: 100%;
     .text {
+      font-size: var(--fs-4xs);
       margin-bottom: 0.5em;
     }
     .date {
       line-height: 0.8em;
+      font-size: var(--fs-1xl);
     }
   }
 `;
