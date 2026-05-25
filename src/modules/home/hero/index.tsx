@@ -1,3 +1,4 @@
+import arrowHeadImg from '@assets/images/arrowhead.png';
 import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import DualButton from '@components/dual-button';
 import { homeHeroData } from '@data';
@@ -14,7 +15,6 @@ import {
   homeHeroWrapperStyles,
   HomeImageContainer,
 } from '@modules/home/hero/styles';
-import { ChevronLeftRounded } from '@mui/icons-material';
 import { useLenis } from 'lenis/react';
 import Image from 'next/image';
 import { forwardRef, Ref, RefObject, useRef } from 'react';
@@ -85,10 +85,10 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
       </HomeHeroDateTextWrapper>
       <HomeHeroLineBox>
         <div className="box _1">
-          <ChevronLeftRounded className="icon" />
+          <Image src={arrowHeadImg} alt="" className="icon" />
         </div>
         <div className="box _2">
-          <ChevronLeftRounded className="icon" />
+          <Image src={arrowHeadImg} alt="" className="icon" />
         </div>
       </HomeHeroLineBox>
     </CommonFullWidthWrapper>

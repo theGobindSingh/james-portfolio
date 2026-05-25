@@ -158,18 +158,22 @@ export const HomeHeroLineBox = styled.div`
       border-bottom-right-radius: 4rem;
       .icon {
         bottom: 0;
-        left: 0;
-        transform: translate(-50%, calc(50% + var(--_pencil-line-width) / 2));
+        left: 5px;
+        height: 1.25rem;
+        width: auto;
+        transform: translate(-50%, calc(50% + var(--_pencil-line-width) / 2))
+          rotate(90deg);
       }
     }
     &._2 {
       height: 85%;
       border-bottom-color: transparent;
       .icon {
-        bottom: 0;
-        right: 0;
-        transform: rotate(-90deg)
-          translate(-50%, calc(50% + var(--_pencil-line-width) / 2));
+        bottom: 5px;
+        height: 1.25rem;
+        width: auto;
+        right: calc(-1 * (var(--_pencil-line-width) / 2));
+        transform: translate(50%, calc(50% + var(--_pencil-line-width) / 2));
       }
     }
     .icon {
