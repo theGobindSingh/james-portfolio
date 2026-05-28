@@ -5,6 +5,34 @@
 Instructions for AI coding agents working in this repository.
 Use this file as the default behavior guide before making code or docs changes.
 
+## Mandatory Skill Bootstrap
+
+Before any response, clarification, plan, or code edit, agents must load and follow the using-superpowers skill first.
+
+Required first skill:
+
+- Primary path (from lock): `skills/using-superpowers/SKILL.md`
+- Installed workspace path: `.agents/skills/using-superpowers/SKILL.md`
+
+If these paths differ in a future setup, prefer the path defined in `skills-lock.json`.
+
+Skill order policy:
+
+1. Always run using-superpowers first.
+2. If the task involves creating/changing behavior, features, UI, architecture, or implementation details, run brainstorming next before implementation.
+3. If the task is frontend/UI implementation, run frontend-design after brainstorming approval.
+4. Do not skip this order because a task seems simple.
+
+Current skill inventory:
+
+- `skills/using-superpowers/SKILL.md` (process gate for skill usage)
+- `skills/brainstorming/SKILL.md` (required before creative/implementation work)
+- `skills/frontend-design/SKILL.md` (required for frontend/UI design execution)
+
+Subagent note:
+
+- If a subagent task explicitly says to skip using-superpowers, follow the subagent stop rule in that skill.
+
 ## Project Snapshot
 
 - Stack: Next.js Pages Router + React + TypeScript + Emotion
@@ -52,6 +80,27 @@ Important behavior:
 - Use default exports for React component files.
 - Keep static copy/config in `src/data.ts` when appropriate.
 - Use `forwardRef` pattern where refs are part of existing component patterns.
+
+## Execution Workflow
+
+1. Use subagents first for discovery and analysis whenever possible.
+2. Read relevant docs and matching code before editing.
+3. Make the smallest change set that satisfies the request.
+4. Keep docs synchronized with implementation when behavior/architecture changes.
+5. Prefer updating existing files and patterns over introducing parallel patterns.
+6. Validate with targeted checks before finalizing.
+
+## Subagent-First Policy
+
+Prefer subagents extensively and by default.
+
+- Use subagents for first-pass exploration, repository scanning, pattern discovery, and documentation audits.
+- Use subagents for independent investigations (bugs, tests, architecture questions, and impact analysis) before implementing changes.
+- Use subagents in parallel whenever tasks are independent.
+- For non-trivial work, split the problem into focused subagent tasks and synthesize results.
+- Keep each subagent prompt narrow, explicit, and outcome-driven.
+
+Only skip subagents when the task is truly trivial and deterministic (for example: one obvious small edit in one known file).
 
 ## Styling Conventions
 
