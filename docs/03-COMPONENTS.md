@@ -17,6 +17,12 @@ This document lists components and modules that exist in the codebase today.
 
 `src/modules/home`:
 
+- `about/`
+- `contact/`
+- `essays-preview/`
+- `expertise/`
+- `featured-work/`
+- `footer/`
 - `index.tsx` (home composition)
 - `grainy.tsx`
 - `hero/`
@@ -175,9 +181,14 @@ Composition order:
 2. `Grainy` (defines SVG filter)
 3. `ReactLenis` root wrapper (`duration: 1`)
 4. `Header`
-5. `SideNav`
-6. `HomeHero`
-7. `BlackSection`
+5. `HomeHero`
+6. `BlackSection`
+7. `Expertise`
+8. `FeaturedWork`
+9. `EssaysPreview`
+10. `AboutSection`
+11. `ContactSection`
+12. `HomeFooter`
 
 ### `grainy.tsx`
 
@@ -239,8 +250,8 @@ Behavior:
 
 These are notable implementation-status facts from the current repo:
 
-- `SideNav` is intentionally not active yet.
-- `BlackSection` still contains placeholder paragraph content.
+- `SideNav` exists as a placeholder component but is not mounted on the homepage.
+- Featured work and essays sections are currently static preview content.
 - Some decorative colors are hardcoded in `live-by-design` and not tokenized.
 
 This file should be updated as those components evolve.

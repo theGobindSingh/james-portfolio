@@ -36,9 +36,14 @@ HomePage
       ├─ Grainy (hidden SVG filter definition)
       └─ ReactLenis(root, duration: 1)
          ├─ Header
-         ├─ SideNav (hidden)
-         ├─ HomeHero
-         └─ BlackSection
+         ├─ HomeHero (.hero)
+         ├─ BlackSection
+         ├─ Expertise
+         ├─ FeaturedWork
+         ├─ EssaysPreview
+         ├─ AboutSection (.about)
+         ├─ ContactSection (.contact)
+         └─ HomeFooter
 ```
 
 ---
@@ -83,18 +88,7 @@ Current `targetClassName` values:
 - `about`
 - `contact`
 
-### 2) `SideNav`
-
-Files:
-
-- `src/components/side-nav/index.tsx`
-- `src/components/side-nav/styles.ts` (empty)
-
-Behavior:
-
-- Mounted but hidden with inline `display: none`
-
-### 3) `HomeHero`
+### 2) `HomeHero`
 
 Files:
 
@@ -135,7 +129,82 @@ Behavior:
 - Renders full-width ragged image divider (`filter: invert(1)`)
 - Renders white section block below hero fold
 - Includes `LiveByDesign` title block
-- Includes placeholder paragraph text (`Lorem ipsum`)
+- Includes production copy from `blackSectionData`
+
+### 5) `Expertise`
+
+Files:
+
+- `src/modules/home/expertise/index.tsx`
+- `src/modules/home/expertise/styles.ts`
+
+Behavior:
+
+- Renders a capability strip with rounded skill chips
+- Uses data from `expertiseData` in `src/data.ts`
+
+### 6) `FeaturedWork`
+
+Files:
+
+- `src/modules/home/featured-work/index.tsx`
+- `src/modules/home/featured-work/styles.ts`
+
+Behavior:
+
+- Renders three featured work preview cards
+- Uses `featuredWorkData` from `src/data.ts`
+- Includes CTA text link that scrolls to `.contact`
+
+### 7) `EssaysPreview`
+
+Files:
+
+- `src/modules/home/essays-preview/index.tsx`
+- `src/modules/home/essays-preview/styles.ts`
+
+Behavior:
+
+- Renders three essay teaser entries
+- Uses `essaysPreviewData` from `src/data.ts`
+
+### 8) `AboutSection`
+
+Files:
+
+- `src/modules/home/about/index.tsx`
+- `src/modules/home/about/styles.ts`
+
+Behavior:
+
+- Renders biography and operating principles
+- Uses `homeAboutData` from `src/data.ts`
+- Includes resume CTA button (`/assets/pdfs/resume.pdf`)
+- Sets the `.about` class for header navigation scrolling
+
+### 9) `ContactSection`
+
+Files:
+
+- `src/modules/home/contact/index.tsx`
+- `src/modules/home/contact/styles.ts`
+
+Behavior:
+
+- Renders contact prompt and email CTA button
+- Reuses social links from `headerAndNavData.bottomLinks`
+- Sets the `.contact` class for header and hero CTA scrolling
+
+### 10) `HomeFooter`
+
+Files:
+
+- `src/modules/home/footer/index.tsx`
+- `src/modules/home/footer/styles.ts`
+
+Behavior:
+
+- Renders closing footer with year and positioning tagline
 
 ---
 
@@ -161,22 +230,19 @@ Implemented now:
 - Global grain effect
 - Header/nav rendering
 - Hero layout + image switching + scroll-linked visual transformation
-- Black section shell with decorative title block
-
-Not implemented on homepage yet:
-
+- Black section narrative with decorative title block
 - Expertise strip
-- Featured work section
-- Essays preview section
+- Featured work preview cards
+- Essays preview cards
+- About section
+- Contact section
 - Footer section
 
 ---
 
 ## Known Gaps (Current Code)
 
-1. `Header` and hero CTA rely on class-based scroll targets (`.hero`, `.about`, `.contact`) that are not currently assigned in rendered sections.
-2. `SideNav` is mounted but inactive/hidden.
-3. `BlackSection` content includes placeholder copy.
+1. Featured work and essays entries are currently homepage previews backed by static data in `src/data.ts`; dedicated routes (`/work`, `/essays`) are still separate follow-up work.
 
 ---
 
