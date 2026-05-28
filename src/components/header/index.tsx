@@ -2,24 +2,70 @@ import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import {
   DesignationText,
   headerContainerStyles,
+  HeaderPosition,
+  headerWrapperStyles,
   LogoAndDesignation,
   NavWrapper,
 } from '@components/header/styles';
 import LinkText from '@components/link-text';
-import { headerAndNavData } from '@data';
-import { forwardRef, Ref } from 'react';
+import { headerAndNavData, HeaderNavData, HeaderNavLink } from '@data';
+import { ComponentProps, forwardRef, Ref } from 'react';
 
-const HeaderWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
-  const { links, middleText } = headerAndNavData;
+type HeaderWrapperCss = ComponentProps<
+  typeof CommonFullWidthWrapper
+>['wrapperCss'];
 
-  const primaryLinksMapper = ({ text, targetClassName }: (typeof links)[0]) => {
-    const clickHandler = () => {
-      const target = document.querySelector(`.${targetClassName}`);
-      target?.scrollIntoView({ behavior: 'smooth' });
-    };
+interface HeaderProps {
+  navData?: HeaderNavData;
+  position?: HeaderPosition;
+  className?: string;
+  wrapperCss?: HeaderWrapperCss;
+}
+
+const HeaderWithoutRef = (
+  {
+    navData = headerAndNavData,
+    position = 'default',
+    className,
+    wrapperCss,
+  }: HeaderProps,
+  ref: Ref<HTMLDivElement>,
+) => {
+  const { links, middleText } = navData;
+
+  const mergedWrapperCss = wrapperCss
+    ? Array.isArray(wrapperCss)
+      ? [headerWrapperStyles(position), ...wrapperCss]
+      : [headerWrapperStyles(position), wrapperCss]
+    : headerWrapperStyles(position);
+
+  const primaryLinksMapper = ({
+    text,
+    href,
+    targetClassName,
+  }: HeaderNavLink) => {
+    const linkKey = targetClassName ?? href ?? text;
+
+    if (targetClassName) {
+      const clickHandler = () => {
+        const target = document.querySelector(`.${targetClassName}`);
+        target?.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      return (
+        <li key={`nav-link-${linkKey}`} className="list-elem">
+          <LinkText text={text} onClick={clickHandler} />
+        </li>
+      );
+    }
+
+    if (!href) {
+      return null;
+    }
+
     return (
-      <li key={`nav-link-${targetClassName}`} className="list-elem">
-        <LinkText text={text} onClick={clickHandler} />
+      <li key={`nav-link-${linkKey}`} className="list-elem">
+        <LinkText text={text} href={href} />
       </li>
     );
   };
@@ -29,11 +75,10 @@ const HeaderWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
       element="header"
       css={headerContainerStyles}
       ref={ref}
+      className={className}
+      wrapperCss={mergedWrapperCss}
     >
       <LogoAndDesignation>
-        {/* <Link href="/" css={logoLinkStyles}>
-          {logoText}
-        </Link> */}
         <DesignationText>{`${middleText}`}</DesignationText>
       </LogoAndDesignation>
       <NavWrapper>

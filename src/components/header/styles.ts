@@ -2,13 +2,42 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { mediaQuery } from '@styles/global';
 
+export type HeaderPosition = 'default' | 'fixed' | 'sticky';
+
+export const headerWrapperStyles = (position: HeaderPosition) => {
+  return css`
+    width: 100%;
+    z-index: ${position === 'default' ? '1' : '20'};
+    position: ${position === 'fixed'
+      ? 'fixed'
+      : position === 'sticky'
+        ? 'sticky'
+        : 'relative'};
+    top: ${position === 'default' ? 'auto' : '0'};
+    left: ${position === 'fixed' ? '0' : 'auto'};
+    right: ${position === 'fixed' ? '0' : 'auto'};
+
+    ${position !== 'default'
+      ? `
+    border-bottom: 1px solid rgb(82 77 71 / 20%);
+    backdrop-filter: blur(6px);
+    background: linear-gradient(
+      180deg,
+      rgb(236 234 227 / 96%) 0%,
+      rgb(236 234 227 / 86%) 100%
+    );
+    `
+      : ''}
+  `;
+};
+
 export const headerContainerStyles = css`
   display: flex;
-  position: relative;
   align-items: center;
   height: var(--header-height);
   overflow: hidden;
   padding: 0.75rem 0;
+
   ${mediaQuery.nonDesktop} {
     align-items: flex-start;
   }

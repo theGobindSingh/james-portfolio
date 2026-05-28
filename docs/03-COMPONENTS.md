@@ -28,6 +28,16 @@ This document lists components and modules that exist in the codebase today.
 - `hero/`
 - `black-section/`
 
+`src/modules/work`:
+
+- `index.tsx` (work page composition)
+- `styles.ts`
+
+`src/modules/contact`:
+
+- `index.tsx` (contact page composition)
+- `styles.ts`
+
 `src/icons/v2`:
 
 - `hero-arrow.tsx`
@@ -70,10 +80,10 @@ Files:
 
 Behavior:
 
-- Reads nav content from `headerAndNavData` in `src/data.ts`
+- Reads nav content from `headerAndNavData` by default and supports page-level `navData` overrides
 - Left text: designation string (`middleText`)
-- Right nav: `Home`, `About`, `Contact`
-- Links are rendered with `LinkText` and scroll to section by class name
+- Right nav supports section-scroll links and route links using the same component
+- Header position mode is configurable (`default`, `fixed`, `sticky`)
 - Commas are rendered via CSS pseudo-element on list items
 
 Key styles:
@@ -227,7 +237,47 @@ Behavior summary:
 
 - Inserts a full-width ragged image divider (inverted)
 - Renders white section background and dark text
-- Places `LiveByDesign` next to a placeholder paragraph (`Lorem ipsum`)
+- Places `LiveByDesign` next to strategic narrative copy from `blackSectionData`
+
+---
+
+## Work Module Composition
+
+### `src/modules/work/index.tsx`
+
+Composition summary:
+
+1. `ThemeProvider` with shared `theme`
+2. `Grainy` filter registration
+3. `ReactLenis` root wrapper
+4. Shared `Header` in fixed mode with route links
+5. Editorial hero block using `workPageData`
+6. Case-study grid with metrics and request links
+7. Bottom collaboration CTA strip
+
+Data source:
+
+- `workPageData` and `WorkCaseStudy` from `src/data.ts`
+
+---
+
+## Contact Module Composition
+
+### `src/modules/contact/index.tsx`
+
+Composition summary:
+
+1. `ThemeProvider` with shared `theme`
+2. `Grainy` filter registration
+3. `ReactLenis` root wrapper
+4. Shared `Header` in fixed mode with route links
+5. Contact hero and response note from `contactPageData`
+6. Contact action panels (email CTA + fit engagements)
+7. Social link row using `headerAndNavData.bottomLinks`
+
+Data source:
+
+- `contactPageData`, `workHeaderNavData`, and `headerAndNavData` from `src/data.ts`
 
 ---
 

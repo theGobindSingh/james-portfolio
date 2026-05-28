@@ -19,6 +19,10 @@ import { useLenis } from 'lenis/react';
 import Image from 'next/image';
 import { forwardRef, Ref, RefObject, useRef } from 'react';
 
+interface HomeHeroProps {
+  className?: string;
+}
+
 const {
   img,
   imgMobile,
@@ -30,7 +34,10 @@ const {
   buttonTargetClassName,
 } = homeHeroData;
 
-const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
+const HomeHeroWithoutRef = (
+  { className }: HomeHeroProps,
+  ref: Ref<HTMLDivElement>,
+) => {
   const fallbackRef = useRef<HTMLDivElement>(null);
 
   const clickHandler = () => {
@@ -54,6 +61,7 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
       wrapperCss={homeHeroWrapperStyles}
       css={homeHeroContainerStyles}
       ref={ref ?? fallbackRef}
+      className={className}
     >
       <HomeHeroTitle>{title}</HomeHeroTitle>
       <HomeImageContainer>

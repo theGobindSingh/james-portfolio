@@ -69,10 +69,20 @@ james-portfolio/
 |  |     |- hero/
 |  |     |- grainy.tsx
 |  |     |- index.tsx
+|  |  |- work/
+|  |     |- index.tsx
+|  |     |- styles.ts
+|  |  |- contact/
+|  |     |- index.tsx
+|  |     |- styles.ts
 |  |- pages/
 |  |  |- _app.tsx
 |  |  |- _document.tsx
 |  |  |- index.tsx
+|  |  |- work/
+|  |  |  |- index.tsx
+|  |  |- contact/
+|  |  |  |- index.tsx
 |  |- styles/
 |  |  |- global.ts
 |  |- data.ts
@@ -93,6 +103,11 @@ Page entry flow:
 2. `src/pages/_app.tsx`
 3. `src/pages/index.tsx`
 4. `src/modules/home/index.tsx`
+
+Additional implemented routes:
+
+- `src/pages/work/index.tsx` -> `src/modules/work/index.tsx`
+- `src/pages/contact/index.tsx` -> `src/modules/contact/index.tsx`
 
 Home module wrapper stack:
 

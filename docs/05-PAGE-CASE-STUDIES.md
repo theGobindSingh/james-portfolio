@@ -6,16 +6,21 @@ This document reflects the real state of the repository and outlines how case-st
 
 ## Current Status (As of This Repo State)
 
-Case study pages are not implemented yet.
+The list page is now implemented at `/work` using the existing Pages Router + Emotion setup.
 
-Not present today:
+Implemented:
 
-- No `/work` route in `src/pages`
-- No `src/pages/work/index.tsx`
-- No `src/pages/work/[slug].tsx`
-- No `content/case-studies` directory
-- No MDX parsing utilities (`lib/mdx.ts` etc.)
-- No case-study-specific components like `CaseStudyHeader`, `OutcomeMetrics`, `WorkCard`
+- `src/pages/work/index.tsx`
+- `src/modules/work/index.tsx`
+- `src/modules/work/styles.ts`
+- Structured work-page content in `src/data.ts` (`workPageData` and `WorkCaseStudy` types)
+
+Still not present:
+
+- `src/pages/work/[slug].tsx`
+- `content/case-studies` directory
+- MDX parsing utilities (`lib/mdx.ts` etc.)
+- Case-study detail components like `CaseStudyHeader` and `OutcomeMetrics`
 
 The previous version of this doc described an App Router + Tailwind + MDX setup that does not exist in this codebase.
 
@@ -77,12 +82,14 @@ export interface CaseStudy {
 
 ### `/work` list page
 
-Responsibilities:
+Status: implemented.
 
-1. Load all case studies.
-2. Sort by `order`.
-3. Render list cards/rows using Emotion styles.
-4. Link each item to `/work/[slug]`.
+Current behavior:
+
+1. Renders a dedicated Work hero and process framing block.
+2. Displays four case-study cards from `workPageData`.
+3. Shows per-study strategic focus and metrics.
+4. Provides request links via `mailto` while detail pages are in progress.
 
 ### `/work/[slug]` detail page
 
@@ -139,6 +146,8 @@ When these pages are built, follow current style conventions:
 3. Use `mediaQuery` helpers from `src/styles/global.ts`.
 4. Reuse `CommonFullWidthWrapper` where full-width section framing is needed.
 
+The current `/work` implementation follows this guidance and introduces a route-specific visual treatment while preserving token and breakpoint conventions.
+
 ---
 
 ## Migration Checklist (From Old Spec to Current Stack)
@@ -153,9 +162,10 @@ When these pages are built, follow current style conventions:
 ## Implementation Status Snapshot
 
 - `src/pages/index.tsx`: implemented
-- `src/pages/work/index.tsx`: missing
+- `src/pages/work/index.tsx`: implemented
 - `src/pages/work/[slug].tsx`: missing
-- case-study content source: missing
-- case-study UI components: missing
+- case-study content source: temporary static content in `src/data.ts`
+- case-study list UI module: implemented in `src/modules/work`
+- case-study detail UI components: missing
 
 Update this file as each piece is implemented.

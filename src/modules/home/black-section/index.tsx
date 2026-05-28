@@ -1,5 +1,6 @@
 import raggedImg from '@assets/images/ragged.png';
 import LiveByDesign from '@components/live-by-design';
+import { blackSectionData } from '@data';
 import {
   BlackSectionWrapper,
   blackSectionWrapperStyles,
@@ -9,6 +10,8 @@ import Image from 'next/image';
 import { forwardRef } from 'react';
 
 const BlackSectionWithoutRef = () => {
+  const { description } = blackSectionData;
+
   return (
     <>
       <Image
@@ -27,14 +30,7 @@ const BlackSectionWithoutRef = () => {
       <BlackSectionWrapper wrapperCss={blackSectionWrapperStyles}>
         <LiveByDesignWrapper>
           <LiveByDesign />
-          <p className="desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
-            placeat alias ipsum eaque eligendi quis, mollitia laudantium. Iusto
-            doloremque atque accusamus iure numquam fuga error ipsum inventore
-            sint, ipsam at nulla cupiditate exercitationem velit adipisci eaque,
-            dolorem modi cum obcaecati. Veniam sed consectetur tempore obcaecati
-            ipsam rerum iusto iste dolore.
-          </p>
+          <p className="desc">{description}</p>
         </LiveByDesignWrapper>
       </BlackSectionWrapper>
     </>

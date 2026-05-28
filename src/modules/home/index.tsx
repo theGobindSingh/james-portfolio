@@ -1,12 +1,17 @@
 import { theme } from '@/theme';
 import Header from '@components/header';
-import SideNav from '@components/side-nav';
 import { ThemeProvider } from '@kami-ui/next-theme';
+import AboutSection from '@modules/home/about';
 import BlackSection from '@modules/home/black-section';
+import ContactSection from '@modules/home/contact';
+import EssaysPreview from '@modules/home/essays-preview';
+import Expertise from '@modules/home/expertise';
+import FeaturedWork from '@modules/home/featured-work';
+import HomeFooter from '@modules/home/footer';
 import Grainy from '@modules/home/grainy';
 import HomeHero from '@modules/home/hero';
 import { ReactLenis } from 'lenis/react';
-import { PropsWithChildren, useEffect, useRef } from 'react';
+import { PropsWithChildren } from 'react';
 
 const HomeWrapperWithComponents = ({
   children,
@@ -22,30 +27,17 @@ const HomeWrapperWithComponents = ({
 };
 
 const Home = () => {
-  const screenHeightForScrollRef = useRef<number>(900);
-  const sideNavRef = useRef<HTMLDivElement>(null);
-  const homeHeroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const { innerHeight } = window;
-    screenHeightForScrollRef.current = 0.8 * innerHeight;
-  }, []);
-
   return (
     <HomeWrapperWithComponents>
-      <Header />
-      <SideNav ref={sideNavRef} />
-      <HomeHero ref={homeHeroRef} />
+      <Header position="default" />
+      <HomeHero className="hero" />
       <BlackSection />
-      {/* <div
-        css={{
-          marginTop: 'calc(100svh - var(--header-height))',
-          zIndex: 1,
-          position: 'relative',
-          isolation: 'isolate',
-        }}
-      >
-      </div> */}
+      <Expertise />
+      <FeaturedWork />
+      <EssaysPreview />
+      <AboutSection />
+      <ContactSection />
+      <HomeFooter />
     </HomeWrapperWithComponents>
   );
 };
