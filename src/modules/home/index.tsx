@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <HomeWrapperWithComponents>
       <Header position="default" />
-      <HomeHero className="hero" />
+      <HomeHero />
       <BlackSection />
       <Expertise />
       <FeaturedWork />
