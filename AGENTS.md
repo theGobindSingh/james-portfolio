@@ -7,31 +7,12 @@ Use this file as the default behavior guide before making code or docs changes.
 
 ## Mandatory Skill Bootstrap
 
-Before any response, clarification, plan, or code edit, agents must load and follow the using-superpowers skill first.
-
-Required first skill:
-
-- Primary path (from lock): `skills/using-superpowers/SKILL.md`
-- Installed workspace path: `.agents/skills/using-superpowers/SKILL.md`
-
-If these paths differ in a future setup, prefer the path defined in `skills-lock.json`.
-
 Skill order policy:
 
-1. Always run using-superpowers first.
-2. If the task involves creating/changing behavior, features, UI, architecture, or implementation details, run brainstorming next before implementation.
-3. If the task is frontend/UI implementation, run frontend-design after brainstorming approval.
+1. Always run `using-superpowers` first.
+2. If the task involves creating/changing behavior, features, UI, architecture, or implementation details, run `brainstorming` next before implementation.
+3. If the task is frontend/UI implementation, run `frontend-design` after `brainstorming` approval.
 4. Do not skip this order because a task seems simple.
-
-Current skill inventory:
-
-- `skills/using-superpowers/SKILL.md` (process gate for skill usage)
-- `skills/brainstorming/SKILL.md` (required before creative/implementation work)
-- `skills/frontend-design/SKILL.md` (required for frontend/UI design execution)
-
-Subagent note:
-
-- If a subagent task explicitly says to skip using-superpowers, follow the subagent stop rule in that skill.
 
 ## Project Snapshot
 

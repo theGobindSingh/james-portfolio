@@ -88,7 +88,7 @@ Listed in order of appearance. Order is deliberate — lead with the strongest o
 ## Key Design References (from the live screenshot)
 
 - First fold: massive "JAMES LODER." headline in Inter Bold, warm parchment background
-- Role tags top-left in small caps: `ART DIRECTOR | BRAND MANAGER | CREATIVE STRATEGIST`
+- Role tags top-left in small caps: `ART DIRECTOR | BRAND MANAGER`
 - Nav top-right as plain text with commas: `Home, About, Contact`
 - Mechanical pencil illustration overlapping the headline
 - Diagonal arrow `↘` + short body paragraph bottom-left

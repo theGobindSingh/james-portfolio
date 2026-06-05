@@ -7,7 +7,7 @@ export const fullName = `${firstName} ${lastName}`;
 
 export const about = `I lead at the intersection of brand strategy, art direction, and corporate identity—unifying visual systems to protect enterprise equity and drive long-term commercial value.`;
 
-export const designation = 'Art Director | Brand Manager | Creative Strategist';
+export const designation = 'Art Director | Brand Manager';
 
 export const email = 'android.gobind@gmail.com';
 

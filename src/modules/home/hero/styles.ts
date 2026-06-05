@@ -97,7 +97,7 @@ export const homeHeroImgStyles = css`
 export const HomeHeroTitle = styled.h1`
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  font-size: clamp(6.875rem, 12.25vw, 14.575rem);
+  font-size: clamp(6.875rem, 10.85vw, 14.575rem);
   font-weight: 700;
   text-align: left;
   display: flex;
@@ -106,6 +106,7 @@ export const HomeHeroTitle = styled.h1`
   text-transform: uppercase;
   margin: 0;
   margin-left: -0.04em;
+  overflow: hidden;
   /* 
    * custom media queries because display text
    */
@@ -120,6 +121,23 @@ export const HomeHeroTitle = styled.h1`
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     /* margin-bottom: 0.25em; */
+  }
+
+  & > * {
+    display: block;
+    height: fit-content;
+    transition: all 0.3s ease;
+  }
+  .space {
+    width: 0.25em;
+  }
+  .moved-up {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  .moved-down {
+    opacity: 0;
+    transform: translateY(100%);
   }
 `;
 
@@ -158,22 +176,18 @@ export const HomeHeroLineBox = styled.div`
       border-bottom-right-radius: 4rem;
       .icon {
         bottom: 0;
-        left: 5px;
-        height: 1.25rem;
-        width: auto;
-        transform: translate(-50%, calc(50% + var(--_pencil-line-width) / 2))
-          rotate(90deg);
+        left: 0;
+        transform: translate(-50%, calc(50% + var(--_pencil-line-width) / 2));
       }
     }
     &._2 {
       height: 85%;
       border-bottom-color: transparent;
       .icon {
-        bottom: 5px;
-        height: 1.25rem;
-        width: auto;
-        right: calc(-1 * (var(--_pencil-line-width) / 2));
-        transform: translate(50%, calc(50% + var(--_pencil-line-width) / 2));
+        bottom: 0;
+        right: 0;
+        transform: rotate(-90deg)
+          translate(-50%, calc(50% + var(--_pencil-line-width) / 2));
       }
     }
     .icon {
@@ -195,9 +209,18 @@ export const HomeHeroTextWrapper = styled.div`
   font-size: var(--fs-m);
   color: var(--color-text-600);
   font-weight: 500;
+  overflow: hidden;
+  .greeting {
+    display: block;
+    color: var(--color-text-700);
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    width: fit-content;
+  }
   & > .text {
     margin: 0;
     margin-bottom: 1.25em;
+    font-size: var(--fs-m);
   }
   .button {
   }
@@ -207,6 +230,12 @@ export const HomeHeroTextWrapper = styled.div`
     }
     grid-row: 2 / 3;
     grid-column: 1 / -1;
+  }
+  & > * {
+    transition: all 0.5s ease;
+  }
+  .moved {
+    transform: translateX(-100%);
   }
 `;
 
