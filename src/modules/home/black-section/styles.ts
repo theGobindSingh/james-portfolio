@@ -17,7 +17,7 @@ export const BlackSectionWrapper = styled(CommonFullWidthWrapper)`
 `;
 
 export const LiveByDesignWrapper = styled.div`
-  margin-bottom: 28vh;
+  margin-bottom: 5rem;
 
   display: flex;
   justify-content: space-evenly;
