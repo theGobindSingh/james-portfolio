@@ -10,6 +10,7 @@ export const LiveByDesignWrapper = styled.div`
     --_char-padding: 2px;
     font-family: var(--font-special-one);
     font-size: calc(var(--fs-4xl) + var(--fs-2xl));
+    font-size: 10vw;
     text-transform: uppercase;
     text-box: trim-both cap text;
 

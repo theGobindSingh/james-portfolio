@@ -97,7 +97,7 @@ export const homeHeroImgStyles = css`
 export const HomeHeroTitle = styled.h1`
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  font-size: clamp(6.875rem, 10.5vw, 14.575rem);
+  font-size: clamp(6.875rem, 10vw, 14.575rem);
   font-weight: 700;
   text-align: left;
   display: flex;
