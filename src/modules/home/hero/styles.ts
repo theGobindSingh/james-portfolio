@@ -97,7 +97,7 @@ export const homeHeroImgStyles = css`
 export const HomeHeroTitle = styled.h1`
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  font-size: clamp(6.875rem, 10.85vw, 14.575rem);
+  font-size: clamp(6.875rem, 10.5vw, 14.575rem);
   font-weight: 700;
   text-align: left;
   display: flex;
@@ -106,14 +106,24 @@ export const HomeHeroTitle = styled.h1`
   text-transform: uppercase;
   margin: 0;
   margin-left: -0.04em;
-  overflow: hidden;
+  gap: 0.5ch;
+  height: 100%;
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    height: 100%;
+  }
   /* 
    * custom media queries because display text
    */
   @media (max-width: 1180px) {
-    font-size: clamp(6.875rem, 12.2vw, 9rem);
+    font-size: clamp(6.875rem, 10.5vw, 9rem);
   }
   ${mediaQuery.nonDesktop} {
+    flex-direction: column;
+    gap: 0;
     font-size: var(--fs-4xl);
     line-height: 0.8em;
     max-width: 7ch;
@@ -121,9 +131,15 @@ export const HomeHeroTitle = styled.h1`
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     /* margin-bottom: 0.25em; */
+    text-box: trim-both cap text;
+    height: fit-content;
+    align-items: flex-start;
+    * {
+      text-box: inherit;
+    }
   }
 
-  & > * {
+  & > * > * {
     display: block;
     height: fit-content;
     transition: all 0.3s ease;

@@ -72,20 +72,23 @@ const Content = ({
 
 const Title = ({ text }: { text: string }) => {
   const ref = useRef<HTMLHeadingElement>(null);
-  const chars = text.split('');
-  const charMapper = (char: string, index: number) => {
-    const key = `hero-title-${char}-${index}`;
-    return (
-      <span
-        key={key}
-        className={
-          (index < text.indexOf(' ') ? 'moved-up' : 'moved-down') +
-          (char === ' ' ? ' space' : '')
-        }
-      >
-        {char}
-      </span>
-    );
+  const words = text.split(' ');
+
+  const wordMapper = (word: string, wordIndex: number) => {
+    const chars = word.split('');
+    const key = `hero-word-${word}-${wordIndex}`;
+    const charMapper = (char: string, charIndex: number) => {
+      const key = `hero-title-${char}-${charIndex}`;
+      return (
+        <span
+          key={key}
+          className={wordIndex % 2 === 0 ? 'moved-up' : 'moved-down'}
+        >
+          {char}
+        </span>
+      );
+    };
+    return <div key={key}>{chars.map(charMapper)}</div>;
   };
   useEffect(() => {
     const timeoutIds: NodeJS.Timeout[] = [];
@@ -99,22 +102,18 @@ const Title = ({ text }: { text: string }) => {
       const movedDownElems = Array.from(
         ref.current?.querySelectorAll('.moved-down') ?? [],
       );
-      movedUpElems.forEach((elem, index) => {
+      const removerCallback = (elem: Element, index: number) => {
         timeoutIds.push(
           // eslint-disable-next-line @eslint-react/web-api/no-leaked-timeout -- ESLint rule is not able to recognize that timeoutIds is defined in the outer scope of this callback function.
           setTimeout(() => {
-            elem.classList.remove('moved-up');
+            elem.classList.forEach((className) => {
+              if (className.includes('moved')) elem.classList.remove(className);
+            });
           }, index * 75),
         );
-      });
-      movedDownElems.forEach((elem, index) => {
-        timeoutIds.push(
-          // eslint-disable-next-line @eslint-react/web-api/no-leaked-timeout -- ESLint rule is not able to recognize that timeoutIds is defined in the outer scope of this callback function.
-          setTimeout(() => {
-            elem.classList.remove('moved-down');
-          }, index * 75),
-        );
-      });
+      };
+      movedUpElems.forEach(removerCallback);
+      movedDownElems.reverse().forEach(removerCallback);
     };
     const observer = new IntersectionObserver(callback, { threshold: 0.99 });
     if (ref.current) observer.observe(ref.current);
@@ -123,7 +122,7 @@ const Title = ({ text }: { text: string }) => {
       observer.disconnect();
     };
   }, []);
-  return <HomeHeroTitle ref={ref}>{chars.map(charMapper)}</HomeHeroTitle>;
+  return <HomeHeroTitle ref={ref}>{words.map(wordMapper)}</HomeHeroTitle>;
 };
 
 const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
