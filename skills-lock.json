@@ -13,6 +13,12 @@
       "skillPath": "skills/frontend-design/SKILL.md",
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
     },
+    "neumorphism-ui": {
+      "source": "webadeva/webadeva-skills",
+      "sourceType": "github",
+      "skillPath": "skills/neumorphism-ui/SKILL.md",
+      "computedHash": "6608942f734514ec5ccab5cb2657f087569c6fdc246167c6f689da3413b149e0"
+    },
     "using-superpowers": {
       "source": "obra/superpowers",
       "sourceType": "github",
