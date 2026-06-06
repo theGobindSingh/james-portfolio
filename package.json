@@ -2,7 +2,9 @@
   "name": "gobind-singh-portfolio",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
+    "prepare": "node scripts/skills.js",
     "dev": "next dev",
     "prebuild": "pnpm lint:fix",
     "build": "next build",

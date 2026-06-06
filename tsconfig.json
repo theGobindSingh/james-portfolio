@@ -1,6 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": ["@tsconfig/strictest/tsconfig.json", "@tsconfig/next/tsconfig.json"],
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/next/tsconfig.json"
+  ],
   "compilerOptions": {
     "target": "ES6",
     "forceConsistentCasingInFileNames": true,
@@ -22,6 +25,12 @@
     "ignoreDeprecations": "5.0",
     "verbatimModuleSyntax": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/**/*.{ts,tsx}",
+    "scripts/**/*"
+  ],
   "exclude": ["node_modules"]
 }
