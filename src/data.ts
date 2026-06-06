@@ -129,19 +129,19 @@ export const featuredWorkData: {
     'Selected programs where strategy, creative output, and execution discipline had to align.',
   items: [
     {
-      title: 'Workflow Architecture and Production Turnaround',
+      title: 'Case Study 01',
       description:
         'Rebuilt the operating model for a creative team managing high-volume campaign delivery.',
       note: 'Throughput improved while quality control became measurable.',
     },
     {
-      title: 'All In One Collectibles',
+      title: 'Case Study 02',
       description:
         'Unified nostalgia-led positioning with modern commerce storytelling across touchpoints.',
       note: 'Brand clarity increased and conversion friction dropped.',
     },
     {
-      title: 'Hobby Box Brooklyn',
+      title: 'Case Study 03',
       description:
         'Developed launch guardrails, governance standards, and a durable GTM creative system.',
       note: 'The team scaled output without sacrificing narrative cohesion.',

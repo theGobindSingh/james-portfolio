@@ -6,6 +6,7 @@ import {
   DM_Mono,
   DM_Sans,
   DM_Serif_Display,
+  Gloock,
 } from 'next/font/google';
 
 const fontSansSerif = DM_Serif_Display({
@@ -27,6 +28,11 @@ const specialFontOne = Bebas_Neue({
   weight: ['400'],
   subsets: ['latin', 'latin-ext'],
   preload: true,
+});
+
+const display = Gloock({
+  weight: ['400'],
+  subsets: ['latin', 'latin-ext', 'cyrillic-ext'],
 });
 
 export const theme: ThemeObject = {
@@ -91,6 +97,7 @@ export const theme: ThemeObject = {
       sans: fontSans.style.fontFamily,
       mono: fontMono.style.fontFamily,
       ['special-one']: specialFontOne.style.fontFamily,
+      display: display.style.fontFamily,
     },
   },
 };

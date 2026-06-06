@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { mediaQuery } from '@styles/global';
 
 export const featuredWorkSectionWrapperStyles = css`
-  background-color: #ffffff;
+  background-color: #fff;
   color: var(--color-text-900);
   position: relative;
   z-index: 1;
@@ -76,65 +76,59 @@ export const FeaturedWorkGrid = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 
-  .card {
-    border: 1px solid var(--color-text-300);
-    border-radius: 1.25rem;
-    padding: 1.2rem;
-    background: linear-gradient(
-      140deg,
-      rgb(255 255 255 / 96%) 0%,
-      rgb(209 209 199 / 25%) 100%
-    );
-    min-height: 17.5rem;
+  .card-wrapper {
     display: flex;
     flex-direction: column;
+    gap: 0.875rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    img {
+      border-radius: 1.25rem;
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      opacity: 0.85;
+    }
   }
 
   .card-title {
     margin: 0;
-    margin-bottom: 0.9rem;
-    font-size: var(--fs-m);
+    font-size: var(--fs-1xl);
     line-height: 1.1;
-    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-family: var(--font-display);
   }
 
-  .card-description {
-    margin: 0;
-    color: var(--color-text-700);
-    line-height: 1.5;
+  .card-desc {
+    text-transform: uppercase;
     font-size: var(--fs-2xs);
-    margin-bottom: 1rem;
-  }
-
-  .card-note {
-    margin: auto 0 0;
-    font-family: var(--font-mono);
-    font-size: var(--fs-3xs);
-    color: var(--color-text-600);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    margin: 0;
   }
 
   ${mediaQuery.nonDesktop} {
     grid-template-columns: 1fr;
 
     .card {
-      min-height: auto;
+      min-height: 14rem;
       border-radius: 1rem;
-      padding: 1rem;
+    }
+
+    .card-image {
+      min-height: 14rem;
     }
 
     .card-title {
       font-size: var(--fs-s);
-    }
-
-    .card-description {
-      font-size: var(--fs-3xs);
-    }
-
-    .card-note {
-      font-size: var(--fs-4xs);
-      margin-top: 1rem;
     }
   }
 `;

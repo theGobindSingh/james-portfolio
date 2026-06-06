@@ -33,10 +33,10 @@ const LiveByDesign = () => {
           {'Design'.split('').map(titleMapper)}
         </TitleRow>
         <DotsContainer className="dots-container">
-          <div className="dot first blue" />
-          <div className="dot second pink" />
-          <div className="dot third yellow" />
-          <div className="dot fourth white" />
+          <div className="dot _1 blue" />
+          <div className="dot _2 pink" />
+          <div className="dot _3 yellow" />
+          <div className="dot _4 white" />
         </DotsContainer>
       </div>
     </LiveByDesignWrapper>

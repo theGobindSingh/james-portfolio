@@ -60,12 +60,37 @@ export const DotsContainer = styled.div`
   bottom: calc(var(--_char-padding));
   right: 0;
   transform: translate(100%, 0%);
+  cursor:
+    url('/heart.svg') 12 12,
+    default;
+
+  --_time-delay: 0.08s;
+
+  &:hover {
+    ._1 {
+      transform: translate(0%, -100%);
+      transition-delay: calc(var(--_time-delay) * 0);
+    }
+    ._2 {
+      transform: translate(0%, -100%);
+      transition-delay: calc(var(--_time-delay) * 1);
+    }
+    ._3 {
+      transform: translate(0%, -100%);
+      transition-delay: calc(var(--_time-delay) * 2);
+    }
+    ._4 {
+      transform: translate(0%, -100%);
+      transition-delay: calc(var(--_time-delay) * 3);
+    }
+  }
 
   .dot {
     width: var(--_size);
     height: var(--_size);
     border-radius: 50%;
     background-color: grey;
+    transition: all 0.3s ease;
 
     &.blue {
       background-color: #00bef1;
@@ -79,5 +104,18 @@ export const DotsContainer = styled.div`
     &.white {
       background-color: var(--color-text-900);
     }
+
+    /* &._1 {
+      transition-delay: calc(0.15s * 0);
+    }
+    &._2 {
+      transition-delay: calc(0.15s * 1);
+    }
+    &._3 {
+      transition-delay: calc(0.15s * 2);
+    }
+    &._4 {
+      transition-delay: calc(0.15s * 3);
+    } */
   }
 `;

@@ -1,3 +1,4 @@
+import img from '@assets/images/car.jpg';
 import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import LinkText from '@components/link-text';
 import { featuredWorkData } from '@data';
@@ -6,6 +7,7 @@ import {
   FeaturedWorkGrid,
   featuredWorkSectionWrapperStyles,
 } from '@modules/home/featured-work/styles';
+import Image from 'next/image';
 
 const FeaturedWork = () => {
   const { title, subtitle, items, ctaText, ctaTargetClassName } =
@@ -32,11 +34,13 @@ const FeaturedWork = () => {
         <FeaturedWorkGrid>
           {items.map((item) => {
             return (
-              <article key={item.title} className="card">
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-description">{item.description}</p>
-                <p className="card-note">{item.note}</p>
-              </article>
+              <div key={item.title} className="card-wrapper">
+                <article className="card">
+                  <Image src={img} alt="" />
+                  <h3 className="card-title">{item.title}</h3>
+                  <p className="card-desc">Lorem ipsum dolor sit amet.</p>
+                </article>
+              </div>
             );
           })}
         </FeaturedWorkGrid>
