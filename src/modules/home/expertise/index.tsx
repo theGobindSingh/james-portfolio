@@ -1,36 +1,27 @@
-/* eslint-disable no-unreachable -- no need */
-import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
-import { expertiseData } from '@data';
-import {
-  ExpertiseContent,
-  ExpertiseList,
-  expertiseSectionWrapperStyles,
-} from '@modules/home/expertise/styles';
-
 const Expertise = () => {
   return null;
-  const { title, items } = expertiseData;
+  // const { title, items } = expertiseData;
 
-  return (
-    <CommonFullWidthWrapper
-      element="section"
-      wrapperCss={expertiseSectionWrapperStyles}
-    >
-      <ExpertiseContent>
-        <p className="label">Expertise</p>
-        <h2 className="title">{title}</h2>
-        <ExpertiseList>
-          {items.map((item) => {
-            return (
-              <li key={item} className="item">
-                {item}
-              </li>
-            );
-          })}
-        </ExpertiseList>
-      </ExpertiseContent>
-    </CommonFullWidthWrapper>
-  );
+  // return (
+  //   <CommonFullWidthWrapper
+  //     element="section"
+  //     wrapperCss={expertiseSectionWrapperStyles}
+  //   >
+  //     <ExpertiseContent>
+  //       <p className="label">Expertise</p>
+  //       <h2 className="title">{title}</h2>
+  //       <ExpertiseList>
+  //         {items.map((item) => {
+  //           return (
+  //             <li key={item} className="item">
+  //               {item}
+  //             </li>
+  //           );
+  //         })}
+  //       </ExpertiseList>
+  //     </ExpertiseContent>
+  //   </CommonFullWidthWrapper>
+  // );
 };
 
 export default Expertise;
