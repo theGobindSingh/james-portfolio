@@ -15,7 +15,14 @@ import {
 import { ChevronLeftRounded } from '@mui/icons-material';
 import { useLenis } from 'lenis/react';
 import Image from 'next/image';
-import { forwardRef, Ref, RefObject, useEffect, useRef } from 'react';
+import {
+  forwardRef,
+  Ref,
+  RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react';
 
 const {
   img,
@@ -133,7 +140,7 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
     target?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useLenis(() => {
+  const scaleHandler = useCallback(() => {
     const elem =
       (ref as RefObject<HTMLDivElement>)?.current ?? fallbackRef.current;
     if (!elem) return;
@@ -143,6 +150,14 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
     elem.style.transform = `scale(${100 - percent / 10}%)`;
     elem.style.opacity = `${100 - percent * 1.5}%`;
   }, []);
+
+  useLenis(() => {
+    scaleHandler();
+  }, [scaleHandler]);
+
+  useEffect(() => {
+    scaleHandler();
+  }, [scaleHandler]);
 
   return (
     <CommonFullWidthWrapper
