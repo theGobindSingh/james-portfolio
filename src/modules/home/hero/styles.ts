@@ -45,7 +45,7 @@ export const HomeImageContainer = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    width: 21%;
+    width: 28%;
     height: 100%;
     border-top: var(--_pencil-line-width) solid var(--color-text-300);
   }
@@ -74,7 +74,7 @@ export const homeHeroImgStyles = css`
   height: 100%;
   width: 100%;
   object-fit: contain;
-  transform: translate(-20%, calc(-50% + var(--_pencil-line-width) / 2));
+  transform: translate(-27%, calc(-50% + var(--_pencil-line-width) / 2));
   /* filter: grayscale(100%); */
   /* mix-blend-mode: darken; */
   ${mediaQuery.desktop} {
