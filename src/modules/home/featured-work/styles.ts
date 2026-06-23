@@ -19,14 +19,18 @@ export const FeaturedWorkContent = styled.div`
     gap: 1.5rem;
     align-items: flex-end;
     margin-bottom: 2rem;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 
   .title {
     margin: 0;
     font-size: var(--fs-4xl);
     line-height: 0.95;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.05em;
   }
 
   .subtitle {
@@ -74,9 +78,10 @@ export const FeaturedWorkContent = styled.div`
 
 export const FeaturedWorkGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   row-gap: 3rem;
+  padding: 0 12.5%;
 
   .card-wrapper {
     display: flex;
@@ -86,8 +91,8 @@ export const FeaturedWorkGrid = styled.div`
     text-align: center;
     &:nth-of-type(1),
     &:nth-of-type(2) {
-      grid-column: 1 / span 3;
-      padding: 0 12.5%;
+      grid-column: 1 / span 2;
+      /* padding: 0 12.5%; */
     }
   }
 

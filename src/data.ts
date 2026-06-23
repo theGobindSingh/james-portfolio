@@ -124,7 +124,7 @@ export const featuredWorkData: {
   ctaText: string;
   ctaTargetClassName: string;
 } = {
-  title: 'Featured Work',
+  title: 'Featured Work.',
   subtitle:
     'Selected programs where strategy, creative output, and execution discipline had to align.',
   items: [
@@ -157,6 +157,12 @@ export const featuredWorkData: {
       description:
         'Designed a cross-functional operating rhythm and decision architecture for a high-output creative team.',
       note: 'The team moved from reactive output to predictable delivery with measurable quality standards.',
+    },
+    {
+      title: 'Case Study 06',
+      description:
+        'Developed a brand identity and narrative framework that unified storytelling across channels.',
+      note: 'Brand expression became more coherent while key customer journeys became easier to understand and complete.',
     },
   ],
   ctaText: 'Request full case studies ↗',
