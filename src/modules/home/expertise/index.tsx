@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable -- no need */
 import CommonFullWidthWrapper from '@components/common-full-width-wrapper';
 import { expertiseData } from '@data';
 import {
@@ -7,6 +8,7 @@ import {
 } from '@modules/home/expertise/styles';
 
 const Expertise = () => {
+  return null;
   const { title, items } = expertiseData;
 
   return (

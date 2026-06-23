@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { mediaQuery } from '@styles/global';
 
 export const aboutSectionWrapperStyles = css`
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: var(--color-text-900);
   position: relative;
   z-index: 1;

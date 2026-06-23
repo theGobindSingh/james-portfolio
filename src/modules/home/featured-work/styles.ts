@@ -3,10 +3,11 @@ import styled from '@emotion/styled';
 import { mediaQuery } from '@styles/global';
 
 export const featuredWorkSectionWrapperStyles = css`
-  background-color: #fff;
+  /* background-color: hsl(34, 12%, 90%); */
   color: var(--color-text-900);
   position: relative;
   z-index: 1;
+  padding-top: 10rem;
 `;
 
 export const FeaturedWorkContent = styled.div`
@@ -75,6 +76,7 @@ export const FeaturedWorkGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  row-gap: 3rem;
 
   .card-wrapper {
     display: flex;
@@ -82,6 +84,11 @@ export const FeaturedWorkGrid = styled.div`
     gap: 0.875rem;
     width: 100%;
     text-align: center;
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      grid-column: 1 / span 3;
+      padding: 0 12.5%;
+    }
   }
 
   .card {

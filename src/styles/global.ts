@@ -52,6 +52,13 @@ const globalStyles = css`
   * {
     box-sizing: border-box;
   }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
 `;
 
 export default globalStyles;

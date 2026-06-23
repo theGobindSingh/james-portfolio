@@ -1,4 +1,5 @@
 import raggedImg from '@assets/images/ragged.png';
+import raggedInvImg from '@assets/images/ragged_inverted.png';
 import LiveByDesign from '@components/live-by-design';
 import { blackSectionData } from '@data';
 import {
@@ -27,7 +28,26 @@ const BlackSectionWithoutRef = () => {
           filter: 'invert(1) ',
         }}
       />
-      <BlackSectionWrapper wrapperCss={blackSectionWrapperStyles}>
+      <BlackSectionWrapper
+        wrapperCss={blackSectionWrapperStyles}
+        secondContainer={
+          <Image
+            src={raggedInvImg}
+            alt=""
+            css={{
+              width: '100%',
+              height: 'auto',
+              objectFit: 'contain',
+              position: 'absolute',
+              transform: 'translateY(100%)',
+              bottom: 0,
+              left: 0,
+              zIndex: 0,
+              filter: 'invert(1)',
+            }}
+          />
+        }
+      >
         <LiveByDesignWrapper>
           <LiveByDesign />
           <p className="desc">{description}</p>

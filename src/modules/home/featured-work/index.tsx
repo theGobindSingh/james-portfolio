@@ -38,7 +38,7 @@ const FeaturedWork = () => {
                 <article className="card">
                   <Image src={img} alt="" />
                   <h3 className="card-title">{item.title}</h3>
-                  <p className="card-desc">Lorem ipsum dolor sit amet.</p>
+                  <p className="card-desc">{item.note}</p>
                 </article>
               </div>
             );

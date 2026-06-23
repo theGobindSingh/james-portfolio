@@ -9,7 +9,6 @@ export const blackSectionWrapperStyles = css`
   z-index: 1;
   position: relative;
   isolation: isolate;
-  overflow: hidden;
 `;
 
 export const BlackSectionWrapper = styled(CommonFullWidthWrapper)`

@@ -146,6 +146,18 @@ export const featuredWorkData: {
         'Developed launch guardrails, governance standards, and a durable GTM creative system.',
       note: 'The team scaled output without sacrificing narrative cohesion.',
     },
+    {
+      title: 'Case Study 04',
+      description:
+        'Built a high-character brand system that balanced conceptual edge with practical execution guidelines.',
+      note: 'The system demonstrated expressive range without losing discipline.',
+    },
+    {
+      title: 'Case Study 05',
+      description:
+        'Designed a cross-functional operating rhythm and decision architecture for a high-output creative team.',
+      note: 'The team moved from reactive output to predictable delivery with measurable quality standards.',
+    },
   ],
   ctaText: 'Request full case studies ↗',
   ctaTargetClassName: 'contact',
