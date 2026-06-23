@@ -140,23 +140,26 @@ const HomeHeroWithoutRef = (_: unknown, ref: Ref<HTMLDivElement>) => {
     target?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scaleHandler = useCallback(() => {
-    const elem =
-      (ref as RefObject<HTMLDivElement>)?.current ?? fallbackRef.current;
-    if (!elem) return;
-    const scrollPosition = window.scrollY;
-    const percent = (scrollPosition * 100) / window.innerHeight;
-    if (percent > 100) return;
-    elem.style.transform = `scale(${100 - percent / 10}%)`;
-    elem.style.opacity = `${100 - percent * 1.5}%`;
-  }, []);
+  const scaleHandler = useCallback(
+    ({ forceSetAttr = false }: { forceSetAttr?: boolean } = {}) => {
+      const elem =
+        (ref as RefObject<HTMLDivElement>)?.current ?? fallbackRef.current;
+      if (!elem) return;
+      const scrollPosition = window.scrollY;
+      const percent = (scrollPosition * 100) / window.innerHeight;
+      if (percent > 100 && !forceSetAttr) return;
+      elem.style.setProperty('scale', `${100 - percent / 10}%`);
+      elem.style.setProperty('opacity', `${100 - percent * 1.5}%`);
+    },
+    [ref],
+  );
 
   useLenis(() => {
     scaleHandler();
   }, [scaleHandler]);
 
   useEffect(() => {
-    scaleHandler();
+    scaleHandler({ forceSetAttr: true });
   }, [scaleHandler]);
 
   return (

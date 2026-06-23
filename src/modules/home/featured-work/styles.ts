@@ -79,7 +79,7 @@ export const FeaturedWorkContent = styled.div`
 export const FeaturedWorkGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   row-gap: 3rem;
   padding: 0 12.5%;
 
