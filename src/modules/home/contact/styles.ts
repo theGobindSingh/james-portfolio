@@ -10,17 +10,21 @@ export const contactSectionWrapperStyles = css`
 `;
 
 export const ContactContent = styled.div`
-  padding: 4rem 0 3.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  & > div {
+    width: 60%;
+    flex-shrink: 0;
+  }
 
   .title {
     margin: 0;
     font-size: var(--fs-4xl);
-    line-height: 0.92;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
+    line-height: 0.95;
+    letter-spacing: 0.05em;
   }
 
   .description {
@@ -33,6 +37,7 @@ export const ContactContent = styled.div`
   }
 
   .email-button {
+    font-size: var(--fs-2xs);
     background-color: var(--color-text-100);
     color: var(--color-text-900);
   }

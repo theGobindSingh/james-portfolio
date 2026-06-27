@@ -174,7 +174,7 @@ export const essaysPreviewData: {
   subtitle: string;
   items: HomePreviewItem[];
 } = {
-  title: 'Essays and Field Notes',
+  title: 'Essays and Field Notes.',
   subtitle:
     'A running set of short essays on brand systems, team design, and creative leadership.',
   items: [
@@ -200,7 +200,7 @@ export const essaysPreviewData: {
 };
 
 export const homeAboutData = {
-  title: 'About',
+  title: 'About.',
   intro:
     'I lead multidisciplinary creative teams through moments where brand, velocity, and business pressure collide.',
   detail:
@@ -215,7 +215,7 @@ export const homeAboutData = {
 };
 
 export const homeContactData = {
-  title: 'Contact',
+  title: 'Contact.',
   description:
     'Hiring for a leadership role, planning a transformation, or looking for strategic partnership support? I would love to connect.',
   emailCtaText: 'Email James ↗',

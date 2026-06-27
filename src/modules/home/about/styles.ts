@@ -10,12 +10,8 @@ export const aboutSectionWrapperStyles = css`
 `;
 
 export const AboutContent = styled.div`
-  border-top: 1px solid var(--color-text-300);
-  padding: 4rem 0;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 2rem;
-
+  width: 60%;
+  flex-shrink: 0;
   .label {
     margin: 0;
     font-family: var(--font-mono);
@@ -80,10 +76,7 @@ export const AboutContent = styled.div`
   }
 
   ${mediaQuery.nonDesktop} {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 3rem 0;
-
+    width: 100%;
     .title {
       font-size: var(--fs-3xl);
       max-width: 12ch;

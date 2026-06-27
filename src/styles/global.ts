@@ -32,7 +32,7 @@ const globalStyles = css`
     &.v2 {
       --header-height: 6rem;
 
-      background-color: var(--color-primary-100);
+      background-color: hsl(60, 10%, 99%);
       &::before {
         content: '';
         filter: url(#grainy) opacity(20%);

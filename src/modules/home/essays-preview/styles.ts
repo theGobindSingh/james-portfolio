@@ -10,7 +10,7 @@ export const essaysPreviewSectionWrapperStyles = css`
 `;
 
 export const EssaysPreviewContent = styled.div`
-  border-top: 1px solid var(--color-text-300);
+  /* border-top: 1px solid var(--color-text-300); */
   padding: 4rem 0;
 
   .title {
@@ -53,7 +53,7 @@ export const EssaysPreviewList = styled.div`
   gap: 1rem;
 
   .item {
-    border-top: 1px solid var(--color-text-500);
+    /* border-top: 1px solid var(--color-text-500); */
     padding-top: 1rem;
   }
 
